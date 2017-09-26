@@ -7,9 +7,10 @@ Username:
 Password:
   <input type="password" id="pass"/><br>
 <button id="ajaxButton">
-  Submit</button>
+  Submit</button><br><hr><br>
 
-<div id="result">Test</div>
+NJIT Server:<div id="NJITresult">Test</div><br><br>
+Backend Databse:<div id="DBresult">DB</div>
 <script>
 
   var httpRequest;
@@ -38,7 +39,8 @@ Password:
   if (httpRequest.readyState === XMLHttpRequest.DONE) {
     if (httpRequest.status === 200) {
       var response = JSON.parse(httpRequest.responseText);
-      document.getElementById("result").innerHTML=("username: "+response.user+" password: "+response.pass);
+      document.getElementById("NJITresult").innerHTML=response.loginNJIT;
+      document.getElementById("DBresult").innerHTML=response.loginDB;
     } else {
       alert('There was a problem with the request.');
     }

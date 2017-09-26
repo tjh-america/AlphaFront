@@ -3,7 +3,7 @@ $json = json_decode(file_get_contents('php://input'));
 $data= json_encode($json);
 //echo json_encode($json);
 $crl = curl_init();
-	curl_setopt($crl, CURLOPT_URL, "https://web.njit.edu/~tjh34/CS490/AlphaFront/curlTest.php");
+	curl_setopt($crl, CURLOPT_URL, "https://web.njit.edu/~jl575/cs490.php");
 	curl_setopt($crl, CURLOPT_POST, 1);
 	curl_setopt($crl, CURLOPT_POSTFIELDS, $data);
 	curl_setopt($crl, CURLOPT_FOLLOWLOCATION, 1);
